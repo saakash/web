@@ -1,0 +1,101 @@
+<div class="row"> 
+    <div class="col-md-12"> 
+        <h1>{{viewData.data.firstName}} {{viewData.data.last_name}} - Employee: {{viewData.data.employeeNum}}</h1> 
+        <form method="post" action="/employee/update" novalidate="true"> 
+        <input type="hidden" name="employeeNum" value="{{viewData.data.employeeNum}}" />
+            <fieldset> 
+                <legend>Personal Information</legend> 
+                <div class="row"> 
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="firstName">First Name:</label> 
+                            <input class="form-control" id="firstName" name="firstName" type="text" value="{{viewData.data.firstName}}" /> 
+                        </div>
+                    </div> 
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="last_name">Last Name:</label> 
+                            <input class="form-control" id="last_name" name="last_name" type="text" value="{{viewData.data.last_name}}" /> 
+                        </div> 
+                    </div> 
+                    <br>
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="email">Email:</label> <input class="form-control" id="email" name="email" type="email" value="{{viewData.data.email}}"/> 
+                        </div> 
+                    </div>  
+                    <div class="col-md-6"> 
+                        <div class="form-group"> 
+                            <label for="ssn">Social Security Num:</label> <input class="form-control" id="ssn" name="SSN" type="text" value="{{viewData.data.SSN}}" readonly/> 
+                        </div> 
+                    </div> 
+                    <br>
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="street">Address (Street):</label> <input class="form-control" id="street" name="addressStreet" type="text" value="{{viewData.data.addressStreet}}"/> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="city">Address (City):</label> <input class="form-control" id="city" name="addresCity" type="text" value="{{viewData.data.addresCity}}"/> 
+                        </div> 
+                    </div> <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="state">Address (State):</label> <input class="form-control" id="state" name="addressState" type="text" value="{{viewData.data.addressState}}"/> 
+                        </div> 
+                    </div> 
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="zipcode">Address (Zip Code):</label> <input class="form-control" id="zipcode" name="addressPostal" type="text" value="{{viewData.data.addressPostal}}"/> 
+                        </div> 
+                    </div> 
+                </div>
+                <legend>Company&nbsp;Information</legend>
+                <div class="row"> 
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="manager">Manager:</label> 
+                            <input class="form-control" id="manager" name="isManager" type="checkbox" value="{{viewData.data.isManager}}" {{#if viewData.data.isManager}} checked {{/if}}/> 
+                        </div> 
+                    </div>
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="managerNo">Employee's Manager Number:</label> 
+                            <input class="form-control" id="managerNo" name="employeeManagerNum" type="text" value="{{viewData.data.employeeManagerNum}}"/> 
+                        </div> 
+                    </div>
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label>Status:</label> 
+                            <input value="Full Time" name="status" type="radio" {{#equal viewData.data.status "Full Time"}} checked {{/equal}} >Full Time&nbsp;&nbsp;
+                            <input value="Part Time" name="status" type="radio" {{#equal viewData.data.status "Part Time"}} checked {{/equal}}>Part Time
+                        </div> 
+                    </div>
+                    <div class="col-md-3"> 
+                        <div class="form-group"> 
+                            <label for="department">Department Type:</label> 
+                                {{#if viewData.departments}}
+                                <select class="form-control" name="department" id="department">
+                                {{#each viewData.departments}}
+                                <option value="{{departmentId}}" {{#if selected}} selected {{/if}} >{{departmentName}} </option>
+                                {{/each}}
+                                </select>
+                                {{else}}
+                                <div>No Departments</div>
+                                {{/if}}
+                        </div> 
+                    </div>
+                    <br>
+                    <div class="col-md-12">
+                        <div class="form-group"> 
+                            <label for="hireDate">Hire Date:</label> 
+                            <input class="form-control" id="hireDate" name="hireDate" type="text" value="{{viewData.data.hireDate}}" readonly/> 
+                        </div> 
+                    </div>
+                </div> 
+            </fieldset> 
+            <hr /> 
+            <input type="submit" class="btn btn-primary pull-right" value="Update Employee" /><br /><br /><br /> 
+        </form> 
+    </div> 
+</div>

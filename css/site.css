@@ -1,0 +1,67 @@
+h3{
+    color:black;
+}
+body{
+    margin: 0;
+    width:100%;
+    height:100%;
+    background-image: url('ca4.jpg');
+    background-size: cover;
+    color:black;
+ }
+ 
+ header{
+     background-color: green;
+     padding:5px 25px;
+ }
+ 
+ nav{
+     padding:8px;
+     background-color:lightblue;
+ }
+ 
+ nav ul{
+     list-style-type: none;
+     padding-left:0px;
+     margin:0px;
+     color:lightgreen;
+ }
+ 
+ nav ul li{
+     display:inline-block;
+     background-color: lightgreen;
+ }
+ 
+ nav ul li a{
+     background-color: orange;
+     color: #eee;
+     text-decoration: none;
+     padding:0 5px;	
+     font-weight:bold;
+     text-transform: uppercase;
+     font-size:13px;
+ }
+ 
+ footer{
+     background-color:lightblue;
+     color: black;
+     padding:10px;
+ }
+ 
+ footer h2{
+     margin:0px;
+     text-transform: uppercase;
+     font-size:13px;
+     padding:0 5px;	
+ }
+ .well .well{ 
+     background-color: white; 
+}
+#hd{
+    font-family: 'Lucida Sans';
+    color: tomato;
+}
+#a p b{
+    font-family: 'Lucudia Sans';
+    color:tomato;
+}
