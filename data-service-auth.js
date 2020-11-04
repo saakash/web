@@ -35,7 +35,6 @@ module.exports.registerUser = function(userData){
          if(userData.password != userData.password2){
              reject("Passwords do not match");
          }else{
-       
             let newUser = new User(userData);
             newUser.save((err) => {
                 if (err) {
